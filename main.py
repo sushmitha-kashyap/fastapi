@@ -129,6 +129,15 @@ def update_patient(patient_id: str, patient_update: PatientUpdate):
     save_data(data)
 
     return JSONResponse(status_code=200, content={'message':'patient updated'})
+# Load JSON.
+# Find patient P001.
+# Extract only the provided fields (weight, city).
+# Merge them into the existing record.
+# Add id temporarily.
+# Create a PatientInfo object to validate data and recompute bmi and verdict.
+# Convert it back to a dictionary (excluding id).
+# Save the updated dictionary to patient.json.
+# Return 200 OK.
 
 @app.delete('/delete/{patient_id}')
 def delete_patient(patient_id: str):
